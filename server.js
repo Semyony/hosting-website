@@ -1,21 +1,28 @@
-var HTTP_PORT = process.env.PORT || 8080;
 var express = require("express");
 var app = express();
 
-var http = require('http');
-var server = http.Server(app);
+var HTTP_PORT = process.env.PORT || 8000;
+var path = require("path");
 
-app.use(express.static('client'))
+function onHttpStart() {
+  console.log("Express http server listening on: " + HTTP_PORT);
+}
 
-server.listen(HTTP_PORT, function() {
-    console.log("running");
+app.use(express.static(__dirname));
+
+app.get("/", function(req,res){
+    res.sendFile(path.join(__dirname,"/home.html"));;
 });
 
-io.on('connection', function(socket) {
-    socket.on('message', function(msg) {
-      io.emit('message', msg);
-    });
+app.get("/plans", function(req,res){
+    res.sendFile(path.join(__dirname,"/cwh.html"));;
 });
 
-io.on()
-
+app.get("/login", function(req,res){
+    res.sendFile(path.join(__dirname,"/login.html"));;
+});
+app.get("/registration", function(req,res){
+    res.sendFile(path.join(__dirname,"/registration.html"));;
+});
+// setup http server to listen on HTTP_PORT
+app.listen(HTTP_PORT, onHttpStart);
