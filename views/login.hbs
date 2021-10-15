@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+</head>
+
+<body id="login">
+    <div class="grad">
+    </div>
+    <div class="text-center">
+        <div class="loginbox"> 
+            <a href="/"><img src="images/logo2.jpeg" alt="logo"></a>
+            <h2 class="singhead">Sign in to WHC</h2>
+            <form action='/login' method="post" class="login-form" role="form">
+                <input type="hidden" name="token" />
+                <div style="color: rgb(255, 123, 0); margin-bottom: 20px;">Wrong Username/Password</div>
+                <input class="form-control email" name="email" placeholder="Username" value="{{usernamee}}" autofocus>
+                <input type="password" name="password" class="form-control mb-3" id="inputPassword" value="{{passwordd}}" placeholder="Password">
+
+                <input type="checkbox" name="rememberme"> Remember Me 
+                <a href="/reset" class="text-center btn-block text-secondary mb-3">Forgot Password?</a>
+                
+                <input id="login" type="submit" class="btn btn-lg btn-block btn-danger" value="Log In" />
+            </form>
+            <div class="reg text-left">
+                New to WHC? <a href="/registration" class=" text-secondary">Sign up</a> 
+            </div>
+        </div>
+    </div>
+
+
+  
+</body>
+
+</html>
