@@ -1,11 +1,8 @@
 {
-  "name": "assignment-3",
+  "name": "assignment-4",
   "version": "1.0.0",
-  "description": "",
+  "description": "ver",
   "main": "server.js",
-  "engines": {
-    "node": "12.0"
-  },
   "scripts": {
     "start": "node server.js",
   },
@@ -17,7 +14,6 @@
     "express-flash": "0.0.2",
     "express-handlebars": "^5.3.4",
     "express-session": "^1.17.2",
-    "nodeman": "^1.1.2",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "pg": "^8.7.1",
