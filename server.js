@@ -9,7 +9,6 @@ const session = require("express-session");
 var path = require("path");
 require("dotenv").config();
 
-var HTTP_PORT = process.env.PORT || 8000;
 
 const initializePassport = require("./loginConfig");
 initializePassport(passport);
@@ -170,4 +169,4 @@ function checkAuthenticated(req, res, next) {
     res.redirect("/login");
   }
 // setup http server to listen on HTTP_PORT
-app.listen(HTTP_PORT, onHttpStart);
+app.listen(process.env.PORT || 3000, onHttpStart);
