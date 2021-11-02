@@ -8,7 +8,7 @@ const flash = require("express-flash");
 const session = require("express-session");
 var path = require("path");
 require("dotenv").config();
-
+const HTTP_PORT = process.env.PORT || 8000;
 
 const initializePassport = require("./loginConfig");
 initializePassport(passport);
@@ -169,4 +169,4 @@ function checkAuthenticated(req, res, next) {
     res.redirect("/login");
   }
 // setup http server to listen on HTTP_PORT
-app.listen(process.env.PORT || 3000, onHttpStart);
+app.listen(HTTP_PORT, onHttpStart);
