@@ -22,8 +22,16 @@
             <a href="/"><img src="images/logo2.jpeg" alt="logo"></a>
             <h2 class="singhead">Sign in to WHC</h2>
             <form action='/login' method="post" class="login-form" role="form">
+
                 <input type="hidden" name="token" />
-                <div style="color: rgb(255, 123, 0); margin-bottom: 20px;">Wrong Username/Password</div>
+                {{#if messages.success_msg}}
+                    <div style="color: rgb(255, 123, 0);">{{ messages.success_msg }}</div>
+                {{/if}}
+
+                {{#if messages.error}}
+                    <div style="color: rgb(255, 123, 0); padding-bottom: 10px;">{{ messages.error }}</div>
+                {{/if}}
+                
                 <input class="form-control email" name="email" placeholder="Username" value="{{usernamee}}" autofocus>
                 <input type="password" name="password" class="form-control mb-3" id="inputPassword" value="{{passwordd}}" placeholder="Password">
 
