@@ -224,16 +224,17 @@ ul{
     position: absolute;
     top: calc(50% - 285px);
     background: white;
-    border-radius: 3px;
+    
     left: calc(50% - 183px);
     box-shadow: 0 0 50px rgb(78, 78, 78);
+    border-radius: 20px;
 }
 
 .reg {
     margin: 15px -30px -30px;
     padding: 16px 32px;
     background: #ecebe7;
-    border-radius: 0 0 3px 3px;
+    border-radius: 10px 10px 20px 20px;
 }
 
 .singhead {
@@ -270,7 +271,7 @@ ul{
     position: absolute;
     top: 40px;
     background: white;
-    border-radius: 3px;
+    border-radius: 20px;
     left: calc(50% - 350px);
     box-shadow: 0 0 50px rgb(78, 78, 78);
 }
@@ -279,7 +280,7 @@ ul{
     margin: 15px -17px -30px;
     padding: 16px 32px;
     background: #ecebe7;
-    border-radius: 0 0 3px 3px;
+    border-radius: 10px 10px 20px 20px;
 }
 
 .sub-heading span {

@@ -42,7 +42,14 @@ app.get("/", function(req,res){
 });
 
 app.get("/plans", function(req,res){
-    res.sendFile(path.join(__dirname,"/cwh.html"));
+    pool.query(
+        `SELECT * FROM wpackage`,  (err, results) =>{
+            let rows = results.rows;
+            res.render('plans', { rows });
+        }
+    )
+    
+    
 });
 
 app.get("/login",  checkAuthenticated, function(req,res){
@@ -63,10 +70,19 @@ app.get("/registration", function(req,res){
 
  app.get("/dashboard", checkNotAuthenticated, (req, res) => {
     console.log(req.isAuthenticated());
-    res.render("dashboard", {name: req.user.first_name});
+    console.log(req.user.role);
+    if(req.user.role == "a"){
+        res.render("dashboard_adm");
+    } else{
+        res.render("dashboard_client");
+    }
+    
   });
-
-app.post("/register", function(req, res) {
+    app.get("/logout", function(req, res) {
+        req.logOut();
+        res.render('login');
+    });
+    app.post("/register", function(req, res) {
     let {email, password, first_name, last_name, phone_number, company_name, street_address, street_address2,
     city, state, postal_code, tax_id, confirmed_password} = req.body;
     let errormess = "";
@@ -108,10 +124,10 @@ app.post("/register", function(req, res) {
                 } else {
                     pool.query(
                         `INSERT INTO wuser (email, password, first_name, last_name, phone_number, 
-                        company_name, street_address, street_address2, city, state, postal_code, tax_id)
-                        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`, 
+                        company_name, street_address, street_address2, city, state, postal_code, tax_id, role)
+                        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)`, 
                         [email, password, first_name, last_name, phone_number, company_name, street_address, street_address2,
-                        city, state, postal_code, tax_id], (err, results) => {
+                        city, state, postal_code, tax_id, "c"], (err, results) => {
                             if(err){
                                 throw err;
                             }
@@ -126,6 +142,42 @@ app.post("/register", function(req, res) {
 
     }
 });
+
+app.post("/dashboard", function(req, res)  {
+    let {name, price, description, feature1, feature2, feature3, feature4,
+        feature5, feature6, feature7, feature8, feature9, feature10} = req.body;
+    let errormess = "";
+    if(!name || !price || !description || !feature1){
+        errormess = "Please, fill all required field!";
+    } else if(isNaN(parseFloat(price))) {
+        errormess = "In price field enter float number!";
+    }
+
+    if(errormess){
+        res.render("dashboard_adm", {error_message: errormess});
+    } else{
+        pool.query(
+            `INSERT INTO wpackage (m_name, m_price, m_desc, feature1, feature2, feature3, feature4,
+                feature5, feature6, feature7, feature8, feature9, feature10)
+            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)`, 
+            [name, price, description, feature1, feature2, feature3, feature4,
+                feature5, feature6, feature7, feature8, feature9, feature10], (err, results) => {
+                if(err){
+                    throw err;
+                }
+                pool.query(
+                    `SELECT * FROM wpackage`, (err, results) =>{
+                        if(err){
+                            throw err;
+                        }
+                        console.log(results.rows);
+                    }
+                )
+            }
+        )
+    }
+}
+);
 
 function validateusername(m_name) {
     letters = /\S+@\S+\.\S+/;
@@ -168,5 +220,7 @@ function checkAuthenticated(req, res, next) {
     }
     res.redirect("/login");
   }
+
+  
 // setup http server to listen on HTTP_PORT
 app.listen(HTTP_PORT, onHttpStart);

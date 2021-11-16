@@ -22,11 +22,9 @@
     <div class="boxsite">
       <div class="header_admin">
         <div class="headerlogo">
-          <span class="thing-span client_section">Admin Section</span>
+          <span class="thing-span client_section">Client Section</span>
           <span class="thing-span image_logo">
-            <a href="/">
             <img class="logo3" src="images/logo2.jpeg" alt="logo" style="height: 50px;">
-            </a>
           </span>
         </div>
       </div>
@@ -37,21 +35,18 @@
             <!--Here goes client section logo image and text-->
 
             <div class="vertical-menu">
-              <a href="#" class="active">Add Plan Packages</a>
-              <a href="#">Account Info</a>
-              <a href="#">Data</a>
-              <a href="#">Contacts</a>
-              <a href="#">Users</a>
-              <a href="#">Help Center</a>
-              <a href="#">Log out</a>
+              <a href="" class="active">My Packages</a>
+              <a href="">Account Info</a>
+              <a href="">Help Center</a>
+              <a href="/logout">Log out</a>
             </div>
 
           </div>
           
             <div class='itemBox2' id="scroller">
-              <form action='/dashboard/addpackage' method="post" role="form">
+              <form action='/addpackage' method="post" role="form">
                 <div class="vertical-input" id="e">
-                  <div style="color: rgb(255, 123, 0);">{{ error_message }}</div>
+                
                   <div class="headitem">Basic Info:</div>
                   <input type="text" id="name" name="name" placeholder="Name...">
                   <input type="text" id="price" name="price" placeholder="Price...">
@@ -61,9 +56,8 @@
                   <div id="featurelist">
 
                   </div>
-                  
                   <button onclick="addFeature()" id="add" value="Add">+ Add</button>
-                  <input type="submit" id="add" value="Save" value="Save">
+                  <button  id="add" value="Add">Save</button>
                 
               </div>
             </form> 

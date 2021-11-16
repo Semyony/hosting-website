@@ -37,33 +37,41 @@
             <!--Here goes client section logo image and text-->
 
             <div class="vertical-menu">
-              <a href="#" class="active">Add Plan Packages</a>
-              <a href="#">Account Info</a>
-              <a href="#">Data</a>
-              <a href="#">Contacts</a>
-              <a href="#">Users</a>
-              <a href="#">Help Center</a>
-              <a href="#">Log out</a>
+              <a href="" class="active">Add Plan Packages</a>
+              <a href="">Account Info</a>
+              <a href="">Data</a>
+              <a href="">Contacts</a>
+              <a href="">Users</a>
+              <a href="">Help Center</a>
+              <a href="/logout">Log out</a>
             </div>
 
           </div>
           
             <div class='itemBox2' id="scroller">
-              <form action='/dashboard/addpackage' method="post" role="form">
+              <form action='/dashboard' method="post" role="form">
                 <div class="vertical-input" id="e">
-                  <div style="color: rgb(255, 123, 0);">{{ error_message }}</div>
+                  <div style="color: rgb(255, 123, 0); text-align: center; margin-bottom: 30px;">{{ error_message }}</div>
                   <div class="headitem">Basic Info:</div>
-                  <input type="text" id="name" name="name" placeholder="Name...">
-                  <input type="text" id="price" name="price" placeholder="Price...">
-                  <input type="text" id="description" name="description" placeholder="Description...">
+                  <input type="text" id="name" name="name" placeholder="Name...(required)">
+                  <input type="text" id="price" name="price" placeholder="Price...(required)">
+                  <input type="text" id="description" name="description" placeholder="Description...(required)">
                   <div class="headitem margin">Features (10 max):</div> 
-                  <input type="text" id="feature1" name="feature1" placeholder="Feature 1...">
-                  <div id="featurelist">
+                  <input type="text" id="feature1" name="feature1" placeholder="Feature 1...(required)">
+                  <input type="text" id="feature2" name="feature2" placeholder="Feature 2...(optional)">
+                  <input type="text" id="feature3" name="feature3" placeholder="Feature 3...(optional)">
+                  <input type="text" id="feature4" name="feature4" placeholder="Feature 4...(optional)">
+                  <input type="text" id="feature5" name="feature5" placeholder="Feature 5...(optional)">
+                  <input type="text" id="feature6" name="feature6" placeholder="Feature 6...(optional)">
+                  <input type="text" id="feature7" name="feature7" placeholder="Feature 7...(optional)">
+                  <input type="text" id="feature8" name="feature8" placeholder="Feature 8...(optional)">
+                  <input type="text" id="feature9" name="feature9" placeholder="Feature 9...(optional)">
+                  <input type="text" id="feature10" name="feature10" placeholder="Feature 10...(optional)">
+                  {{!-- <div id="featurelist">
 
                   </div>
-                  
-                  <button onclick="addFeature()" id="add" value="Add">+ Add</button>
-                  <input type="submit" id="add" value="Save" value="Save">
+                  <button onclick="addFeature()" id="add" value="Add">+ Add</button> --}}
+                  <button  id="add" value="Add">Save</button>
                 
               </div>
             </form> 
@@ -83,7 +91,7 @@
     </div>
   </div>
 
-<script>
+{{!-- <script>
   var num=2;
   function addFeature(){
     
@@ -100,7 +108,7 @@
       document.getElementById('e').removeChild(document.getElementById('add'));
     }
   }
-</script>
+</script> --}}
 </body>
 
 </html>

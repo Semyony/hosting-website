@@ -16,7 +16,25 @@
 </head>
 
 <body>
+    <style rel="stylesheet">
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
+        .item {
+            flex: 0 0 calc(33.33% - 20px);
+            background: teal;
+            color: white;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
     <header>
         <a href="/home.html"><img class="logo" src="images/whc.jpg" alt=""></a>
         <nav class=" navbar navbar-expand-lg navbar-light text-dark ">
@@ -47,131 +65,128 @@
 
     <div id="herosection">
         <img src="images/man2.png" style="width: 720px; margin-left: 20%; position: absolute;">
-        <span class="openname" style="width: 720px; margin-left: 35%; position: relativce;">Choose A Plan For Your Needs...</span>
-        
+        <span class="openname" style="width: 720px; margin-left: 35%; position: relativce;">Choose A Plan For Your
+            Needs...</span>
+
+    </div>
+
+    <div id="container" style="max-width: 1000px; margin-left: auto; margin-right: auto;">
+        {{# each items}}
+        <div class="item">
+            <i class="fa fa-bicycle iplan"></i>
+            <h2>Starter</h2>
+            Affordable plan, great for personal projects.<br>
+            <span>As low as</span>
+            <span class="price"><strong>C$3.89</strong>/mo</span>
+            <a href="" class="btn btn-lg btn-block btn-danger mt-4 mb-3">Add to Cart</a>
+            <div class="detailsplans">
+                <ul>
+                    <li>
+                        STARTE Performance
+                    <li>
+                        Single Website
+                    </li>
+                    <li>
+                        STARTE Performance
+                    <li>
+                        Single Website
+                    </li>
+                    <li>
+                        STARTE Performance
+                    <li>
+                        Single Website
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {{/each}}
     </div>
 
     <div class="plans-th container text-center">
         <div class="row mx-auto">
             <div class="col-sm-2" style="margin-left: auto;">
-                <i class="fa fa-bicycle iplan"  ></i>
+                <i class="fa fa-bicycle iplan"></i>
                 <h2>Starter</h2>
                 Affordable plan, great for personal projects.<br>
                 <span>As low as</span>
                 <span class="price"><strong>C$3.89</strong>/mo</span>
-                <strong class="bg-warning" style="margin-bottom: 20px;">Save 57%</strong>
                 <a href="" class="btn btn-lg btn-block btn-danger mt-4 mb-3">Add to Cart</a>
                 <div class="detailsplans">
                     <ul>
-                        <li><i class="fa fa-tachometer-alt"></i> 
-                            <strong>STARTER</strong> Performance
-                            <i class="fa fa-bolt text-danger" ></i>
-                            <i class="fa fa-bolt text-muted"></i>
-                            <i class="fa fa-bolt text-muted"></i>
-                            <i class="fa fa-bolt text-muted"></i>
                         <li>
-                            <i class="fa fa-laptop"></i>
-                            </i> <strong>Single</strong> Website
+                            STARTE Performance
+                        <li>
+                            Single Website
                         </li>
                         <li>
-                            <i class="fa fa-server"></i> 
-                            <strong>Unlimited</strong> Space &amp; Traffic
+                            STARTE Performance
+                        <li>
+                            Single Website
                         </li>
                         <li>
-                            <i class="fa fa-leaf" style="color: green"  ></i>
-                            <strong>Powered</strong> by renewable energy</a>
-                        </li>
+                            STARTE Performance
                         <li>
-                            <i class="fa fa-envelope"></i> <strong>All-Inclusive</strong> STARTER Email 
-                        </li>
-                        <li>
-                            <i class="fa fa-cubes"></i> <strong>Standard</strong> Hosting Features 
-                    </ul>
-                </div>
-            </div>
-            <div class="plan2 col-sm-2">
-                <div class="mp">Most Popular</div>
-                <i class="fa fa-rocket"></i>
-                <h2>Pro</h2>
-                Pro performance, premium features!<br>
-                <span>As low as</span>
-                <span class="price"><strong>C$3.92</strong>/mo</span>
-                <strong class="bg-warning" style="margin-bottom: 20px;">Save 62%</strong>
-                <a href="" class="btn btn-lg btn-block btn-danger mt-3 mb-3">Add to Cart</a>
-                <div class="detailsplans">
-                    <ul>
-                        <li>
-                            <i class="fa fa-tachometer-alt"  ></i> 
-                            <strong>PRO</strong> Performance 
-                            <i class="fa fa-bolt text-danger"></i>
-                            <i class="fa fa-bolt text-danger"></i>
-                            <i class="fa fa-bolt text-muted"></i>
-                            <i class="fa fa-bolt text-muted"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-laptop"></i> 
-                            <strong>Unlimited</strong> Websites</li>
-                        <li>
-                            <i class="fa fa-server"></i> <strong>Unlimited</strong> Space & Traffic</li>
-                            <i class="fa fa-leaf" style="color: green"  ></i>
-                            <strong>Powered</strong> by renewable energy</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-envelope"  ></i> <strong>All-Inclusive</strong> PRO Email
-                        </li>
-                        <li>
-                            <i class="fa fa-cubes"  ></i> <strong>Standard</strong> Hosting Features 
-                        </li>
-                        <li>
-                            <i class="fa fa-globe"  ></i> <strong>Free</strong> domain</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-lock"  ></i> <strong>SSL</strong> Certificate
+                            Single Website
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class=" col-sm-2" style="margin-right: auto;">
-                <i class="fa fa-building"></i>
-                <h2>Enterprise</h2>
-                Best performance with SSL & dedicated IP<br>
-                <span>As low as</span>
-                <span class="price"><strong>C$11.89</strong>/mo</span>
-                <strong class="bg-warning" style="margin-bottom: 20px;">Save 43%</strong>
-                <a href="" class="btn btn-lg btn-block btn-danger mt-3 mb-3">Add to Cart</a>
-                <div class="detailsplans">
-                    <ul>
-                        <li>
-                            <i class="fa fa-tachometer-alt"  ></i> <strong>ENTERPRISE</strong> Performance 
-                            <i class="fa fa-bolt text-danger"  ></i>
-                            <i class="fa fa-bolt text-danger"  ></i>
-                            <i class="fa fa-bolt text-danger"  ></i>
-                            <i class="fa fa-bolt text-danger"  ></i> 
-                        </li>
-                        <li>
-                            <i class="fa fa-laptop"></i> <strong>Unlimited</strong> Websites</li>
-                        <li>
-                            <i class="fa fa-server"></i> <strong>Unlimited</strong>
-                            Space & Traffic
-                        </li>
-                        <li>
-                            <i class="fa fa-envelope"></i> <strong>All-Inclusive</strong> ENTERPRISE
-                            Email
-                        </li>
-                        <li>
-                            <i class="fa fa-cubes"  ></i> <strong>Standard</strong> Hosting Features 
-                        </li>
-                        <li>
-                        <li>
-                            <i class="fa fa-globe"  ></i> <strong>Free</strong> Domain</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-lock"  ></i> <strong>SSL</strong> Certificate
-                        </li>
-                        <li>
-                            <i class="fa fa-star"  ></i> <strong>Dedicated</strong> IP
-                        </li>
-                    </ul>
+            <div class="row mx-auto">
+                <div class="col-sm-2" style="margin-left: auto;">
+                    <i class="fa fa-bicycle iplan"></i>
+                    <h2>Starter</h2>
+                    Affordable plan, great for personal projects.<br>
+                    <span>As low as</span>
+                    <span class="price"><strong>C$3.89</strong>/mo</span>
+                    <a href="" class="btn btn-lg btn-block btn-danger mt-4 mb-3">Add to Cart</a>
+                    <div class="detailsplans">
+                        <ul>
+                            <li>
+                                STARTE Performance
+                            <li>
+                                Single Website
+                            </li>
+                            <li>
+                                STARTE Performance
+                            <li>
+                                Single Website
+                            </li>
+                            <li>
+                                STARTE Performance
+                            <li>
+                                Single Website
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row mx-auto">
+                <div class="col-sm-2" style="margin-left: auto;">
+                    <i class="fa fa-bicycle iplan"></i>
+                    <h2>Starter</h2>
+                    Affordable plan, great for personal projects.<br>
+                    <span>As low as</span>
+                    <span class="price"><strong>C$3.89</strong>/mo</span>
+                    <a href="" class="btn btn-lg btn-block btn-danger mt-4 mb-3">Add to Cart</a>
+                    <div class="detailsplans">
+                        <ul>
+                            <li>
+                                STARTE Performance
+                            <li>
+                                Single Website
+                            </li>
+                            <li>
+                                STARTE Performance
+                            <li>
+                                Single Website
+                            </li>
+                            <li>
+                                STARTE Performance
+                            <li>
+                                Single Website
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
