@@ -24,7 +24,9 @@
         <div class="headerlogo">
           <span class="thing-span client_section">Client Section</span>
           <span class="thing-span image_logo">
+            <a href="/">
             <img class="logo3" src="images/logo2.jpeg" alt="logo" style="height: 50px;">
+            </a>
           </span>
         </div>
       </div>
@@ -35,32 +37,17 @@
             <!--Here goes client section logo image and text-->
 
             <div class="vertical-menu">
-              <a href="" class="active">My Packages</a>
-              <a href="">Account Info</a>
-              <a href="">Help Center</a>
+              <a href="/dashboard" class="active">Account Info</a>
+              <a href="">My Packages</a>
               <a href="/logout">Log out</a>
             </div>
 
           </div>
           
             <div class='itemBox2' id="scroller">
-              <form action='/addpackage' method="post" role="form">
-                <div class="vertical-input" id="e">
-                
-                  <div class="headitem">Basic Info:</div>
-                  <input type="text" id="name" name="name" placeholder="Name...">
-                  <input type="text" id="price" name="price" placeholder="Price...">
-                  <input type="text" id="description" name="description" placeholder="Description...">
-                  <div class="headitem margin">Features (10 max):</div> 
-                  <input type="text" id="feature1" name="feature1" placeholder="Feature 1...">
-                  <div id="featurelist">
-
-                  </div>
-                  <button onclick="addFeature()" id="add" value="Add">+ Add</button>
-                  <button  id="add" value="Add">Save</button>
-                
-              </div>
-            </form> 
+              <div style=" font-family: 'Montserrat';font-size: 20px; color: black; ">Hi, {{ name }}  {{ lastn }}</div>
+              <div style=" font-family: sans-serif;font-size: 20px; color: black; ">Email: {{ email }}</div>
+              <div style=" font-family: sans-serif;font-size: 20px; color: black; ">Phone Number: {{ phone }}</div>
             </div>
         
         </div>
@@ -77,7 +64,7 @@
     </div>
   </div>
 
-<script>
+{{!-- <script>
   var num=2;
   function addFeature(){
     
@@ -94,7 +81,7 @@
       document.getElementById('e').removeChild(document.getElementById('add'));
     }
   }
-</script>
+</script> --}}
 </body>
 
 </html>

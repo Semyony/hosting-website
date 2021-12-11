@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dash_style.css">
+    <title>Document</title>
+</head>
+
+
+
+<body>
+    <div class="grad3">
+        <div class="boxsite">
+            <div class="header_admin">
+                <div class="headerlogo">
+                    <span class="thing-span client_section">Admin Section</span>
+                    <span class="thing-span image_logo">
+                        <a href="/">
+                            <img class="logo3" src="images/logo2.jpeg" alt="logo" style="height: 50px;">
+                        </a>
+                    </span>
+                </div>
+            </div>
+            <div class='Admin'>
+                <div class="items">
+                    <div class='itemBox even'>
+                        <!--Client Section Header-->
+                        <!--Here goes client section logo image and text-->
+
+                        <div class="vertical-menu">
+                            <a href="/dashboard">Account Info</a>
+                            <a href="/addpackage">Add Plan Package</a>
+                            <a href="/editpackage" class="active">Edit Plan Package</a>
+                            <a href="/logout">Log out</a>
+                        </div>
+
+                    </div>
+
+                    <div class='itemBox2' id="scroller">
+                        <div id="editcontainer" style="">
+                            {{# each rows}}
+                            <div class="editcontainer1">
+
+                                <h2>{{ this.m_name }}</h2>
+                                <h5 style=" color: black;"><strong>Description: </strong></h5>
+                                {{ this.m_desc }}<br>
+                                <h5 style=" color: black;"><strong>Price: </strong></h5>
+                                {{ this.m_price }}</strong>
+                                <h5 style=" color: black;"><strong>Features: </strong></h5>
+                                <div class="editdetailsplans">
+                                    <ul>
+                                        {{#if this.feature1}}
+                                            {{ this.feature1 }}<br>
+                                        {{/if}}
+                                        {{#if this.feature2}}
+                                            {{ this.feature2 }}<br>
+                                        {{/if}}
+                                        {{#if this.feature3}}
+                                            {{ this.feature3 }}<br>
+                                        {{/if}}
+                                        {{#if this.feature4}}
+                                            {{ this.feature4 }}<br>
+                                        {{/if}}
+                                        {{#if this.feature5}}
+                                            {{ this.feature5 }}<br>
+                                        {{/if}}
+                                        {{#if this.feature6}}
+                                            {{ this.feature6 }}<br>
+                                        {{/if}}
+                                        {{#if this.feature7}}
+                                            {{ this.feature7 }}<br>
+                                        {{/if}}
+                                        {{#if this.feature8}}
+                                            {{ this.feature8 }}<br>
+                                        {{/if}}
+                                        {{#if this.feature9}}
+                                            {{ this.feature9 }}<br>
+                                        {{/if}}
+                                        {{#if this.feature9}}
+                                            {{ this.feature9 }}<br>
+                                        {{/if}}
+                                    </ul>
+                                </div>
+                                <a href="/editpackage/{{this.id}}" id="add" ><div style="text-align: center;line-height: 50px;">Edit</div></a>
+                                <a href="/delete/{{this.id}}" id="add" ><div style="text-align: center;line-height: 50px;">Delete</div></a>
+                                <hr width="70%" >
+                            </div>
+                            
+                            {{/each}}
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <footer class=" text-white"
+                style="background-color: #3e3059; width: 100%; margin-left: auto; margin-right: auto;">
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                    © 2021 Copyright:
+                    <a class="text-white" href="/">Web Hosting Canada</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    {{!-- <script>
+  var num=2;
+  function addFeature(){
+    
+    scrollingElement = (document.scrollingElement || scroll)
+    if(num <= 10){
+      var newInput = '<input type="text" id="feature1" name="feature'+num+'" placeholder="Feature '+num+'...">';
+      document.getElementById('featurelist').innerHTML += newInput;
+      var objDiv = document.getElementById("scroller");
+      objDiv.scrollTop = objDiv.scrollHeight;
+
+      num++;
+    }
+    if(num == 11){
+      document.getElementById('e').removeChild(document.getElementById('add'));
+    }
+  }
+</script> --}}
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/dash_style.css">
+  <title>Document</title>
+</head>
+
+
+
+<body>
+  <div class="grad3">
+    <div class="boxsite">
+      <div class="header_admin">
+        <div class="headerlogo">
+          <span class="thing-span client_section">Admin Section</span>
+          <span class="thing-span image_logo">
+            <a href="/">
+            <img class="logo3" src="/images/logo2.jpeg" alt="logo" style="height: 50px;">
+            </a>
+          </span>
+        </div>
+      </div>
+      <div class='Admin'>
+        <div class="items">
+          <div class='itemBox even'>
+            <!--Client Section Header-->
+            <!--Here goes client section logo image and text-->
+
+            <div class="vertical-menu">
+              <a href="/dashboard">Account Info</a>
+              <a href="/addpackage" >Add Plan Package</a>
+              <a href="/editpackage" class="active">Edit Plan Package</a>
+              <a href="/logout">Log out</a>
+            </div>
+
+          </div>
+          
+            <div class='itemBox2' id="scroller">
+              <form action='/editpackage/{{this.id}}' method="post" role="form">
+                <div class="vertical-input" id="e">
+                  <div style="color: rgb(255, 123, 0); text-align: center; margin-bottom: 30px;">{{ error_message }}</div>
+                  <div class="headitem">Basic Info:</div>
+                  <input type="text" id="name" name="name" value="{{this.m_name}}" placeholder="Name...(required)">
+                  <input type="text" id="price" name="price" value="{{this.m_price}}" placeholder="Price...(required)">
+                  <input type="text" id="description" name="description" value="{{this.m_desc}}" placeholder="Description...(required)">
+                  <div class="headitem margin">Features (10 max):</div> 
+                  <input type="text" id="feature1" name="feature1" value="{{this.feature1}}" placeholder="Feature 1...(required)">
+                  <input type="text" id="feature2" name="feature2" value="{{this.feature2}}" placeholder="Feature 2...(optional)">
+                  <input type="text" id="feature3" name="feature3" value="{{this.feature3}}" placeholder="Feature 3...(optional)">
+                  <input type="text" id="feature4" name="feature4" value="{{this.feature4}}" placeholder="Feature 4...(optional)">
+                  <input type="text" id="feature5" name="feature5" value="{{this.feature5}}" placeholder="Feature 5...(optional)">
+                  <input type="text" id="feature6" name="feature6" value="{{this.feature6}}" placeholder="Feature 6...(optional)">
+                  <input type="text" id="feature7" name="feature7" value="{{this.feature7}}" placeholder="Feature 7...(optional)">
+                  <input type="text" id="feature8" name="feature8" value="{{this.feature8}}" placeholder="Feature 8...(optional)">
+                  <input type="text" id="feature9" name="feature9" value="{{this.feature9}}" placeholder="Feature 9...(optional)">
+                  <input type="text" id="feature10" name="feature10" value="{{this.feature10}}" placeholder="Feature 10...(optional)">
+                  {{!-- <div id="featurelist">
+
+                  </div>
+                  <button onclick="addFeature()" id="add" value="Add">+ Add</button> --}}
+                  <button  id="add" value="Add">Edit</button>
+                
+              </div>
+            </form> 
+            </div>
+        
+        </div>
+
+
+      </div>
+      <footer class=" text-white"
+        style="background-color: #3e3059; width: 100%; margin-left: auto; margin-right: auto;">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2021 Copyright:
+          <a class="text-white" href="/">Web Hosting Canada</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+</body>
+
+</html>

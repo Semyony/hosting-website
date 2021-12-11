@@ -17,15 +17,16 @@
 <body>
 
   <header>
-    <a href="/"><img class="logo" src="images/whc.jpg" alt=""></a>
+    <div class="logo" ><a href="/" src="images/whc.jpg" alt=""><img class="logopic" src="images/whc.jpg" alt=""></a><a class="cart" href="/cart"><i class="fa fa-shopping-cart"> </i> Cart</a></div>
+    
     <nav class=" navbar navbar-expand-lg navbar-light text-dark ">
       <div class=" navbar-nav  mx-auto">
         <ul class="nav navbar-nav nav-pills">
           <li class="nav-item">
-            <a class="nav-link active text-light" href="#">HOSTING & SERVERS</span></a>
+            <a class="nav-link active text-light" href="/">HOSTING & SERVERS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">DOMAIN NAMES</a>
+            <a class="nav-link" href="/plans">PLANS</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">WEBSITES</a>
@@ -44,16 +45,15 @@
     </nav>
   </header>
 
-  <div>
-  </div>
   <div id="herosection">
     <img src="images/man.png" style="width: 293px; margin-left:30%; position: relative;">
-    <span class="openname">Thank You For Your Support, {{fname}}</span>
+    <span class="openname">Yes, we are open...</span>
     <div class="input-group mx-auto" id="search">
       <input type="search" class="form-control rounded" placeholder="Find your perfect domain" aria-label="Search"
         aria-describedby="search-addon">
       <button type="button" class="btn searbut btn-danger">search</button>
     </div>
+    <a href="/login"><span class="signin">SIGN IN</span></a>
   </div>
 
 
@@ -152,7 +152,7 @@
         <a href="https://www.instagram.com/whc.ca/" class="fa fa-instagram"></a>
       </div>
     </div>
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    <div id="footer" class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       © 2021 Copyright:
       <a class="text-white" href="/">Web Hosting Canada</a>
     </div>

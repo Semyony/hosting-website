@@ -188,11 +188,4 @@ body, html {
 }
 .editcontainer1 {
     max-width: 90%;
-}
-
-#add:hover{
-    background-color: #6e0707;
-}
-.active:hover{
-    background-color: #6e0707!important;
-}
+  }

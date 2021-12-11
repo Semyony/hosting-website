@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <title>Document</title>
+</head>
+
+<body id="class-body">
+
+        <div class="logo margin-cart" style="margin-bottom: 20px;"><a href="/" src="images/whc.jpg" alt=""><img class="logopic" src="images/whc.jpg"
+                    alt=""></a><a class="cart" href="/cart"><i class="fa fa-shopping-cart"> </i> Cart</a></div>
+        <div style="text-align: center;">
+            <a href="/dashboard" class="back_to_dash"><span style="font-size: 20px;"><i class='fas fa-angle-double-left'></i> Go to Dasboard</span></a>
+        </div>
+        
+        <div class=" mx-auto" id="cart_cont">
+            <div class="container time_duration">
+                <h2>
+                    Web Hosting: {{ obj.m_name }}
+                </h2>
+                <div class=" mx-auto text-center">
+                    <div class="row row_time">
+                        <div class="col-lg-3 col-md-6">
+                            <div  style="font-weight: bolder;" class="box_month col-md-12 active ">
+                                <div>1 month</div>
+                                <h3>${{ obj.m_price }}</h3>
+                                <div>/month</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="box_month col-md-12">
+                                12 month
+                                <h3>${{ price20 }}</h3>
+                                <div style="font-weight: bolder;">/month</div>
+                                <div style="background-color: #FFFF00; margin-top: 10px;">SAVE 20%</div>
+                                <strike style="font-size: 15px;">$20.09</strike>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="box_month col-md-12">
+                                24 month
+                                <h3>${{ price30  }}</h3>
+                                <div style="font-weight: bolder;">/month</div>
+                                <div style="background-color: #FFFF00; margin-top: 10px;">SAVE 30%</div>
+                                <strike style="font-size: 15px;">$20.09</strike>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="box_month col-md-12">
+                                36 month
+                                <h3>${{ price40  }}</h3>
+                                <div  style="font-weight: bolder;">/month</div>
+                                <div style="background-color: #FFFF00; margin-top: 10px;" >SAVE 40%</div>
+                                <strike style="font-size: 15px;">$20.09</strike>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="order_summary">
+                <h2>Order Summary</h2>
+                <div class="cont_summary container">
+                    <div class="row_summary row row-cols-1">
+                        <div class="col">
+                            <span style="font-family: 'Montserrat', 'Open Sans'; font-size: 16px;">{{ obj.m_name }}</span>
+                            <span style="float: right; font-size: 16px; padding-top:3px;">$611.64</span>
+                            <div style="font-size: 15px;">36 month</div>
+                        </div>
+                    </div>
+                    <div class="row_summary row row-cols-1">
+                        <div class="col">
+                            <span style="color: grey; font-size: 15px;">PROMO </span>
+                            <span style="font-weight: bolder; color: #C82333;float: right; font-size: 16px;">-$183.56</span>
+                        </div>
+                    </div>
+                    <div class="row_summary row row-cols-1">
+                        <div class="col">
+                            <span style="font-size: 15px;">Total </span>
+                            <span style="font-weight: bolder; color:black;float: right; font-size: 20px;">-$183.56</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align:center; color: grey; font-size: 15px; ">All prices are in CAD</div>
+                <a href="" class="btn btn-lg btn-block btn-danger mt-4 mb-3" style="width: 80%; margin-right:auto;margin-left:auto;">Add to Cart</a>
+            </div>
+
+            <div id="footer" class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2021 Copyright:
+                <a class="text-white" href="/">Web Hosting Canada</a>
+            </div>
+            </footer>
+</body>
+
+</html>

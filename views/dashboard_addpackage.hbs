@@ -37,21 +37,18 @@
             <!--Here goes client section logo image and text-->
 
             <div class="vertical-menu">
-              <a href="" class="active">Add Plan Packages</a>
-              <a href="">Account Info</a>
-              <a href="">Data</a>
-              <a href="">Contacts</a>
-              <a href="">Users</a>
-              <a href="">Help Center</a>
+              <a href="/dashboard">Account Info</a>
+              <a href="/addpackage" class="active">Add Plan Package</a>
+              <a href="/editpackage">Edit Plan Package</a>
               <a href="/logout">Log out</a>
             </div>
 
           </div>
           
             <div class='itemBox2' id="scroller">
-              <form action='/dashboard' method="post" role="form">
+              <form action='/addpackage' method="post" role="form">
                 <div class="vertical-input" id="e">
-                  <div style="color: rgb(255, 123, 0); text-align: center; margin-bottom: 30px;">{{ error_message }}</div>
+                  <div style="color: rgb(255, 123, 0); text-align: center; margin-bottom: 30px;">{{ errorm }}</div>
                   <div class="headitem">Basic Info:</div>
                   <input type="text" id="name" name="name" placeholder="Name...(required)">
                   <input type="text" id="price" name="price" placeholder="Price...(required)">
@@ -91,24 +88,6 @@
     </div>
   </div>
 
-{{!-- <script>
-  var num=2;
-  function addFeature(){
-    
-    scrollingElement = (document.scrollingElement || scroll)
-    if(num <= 10){
-      var newInput = '<input type="text" id="feature1" name="feature'+num+'" placeholder="Feature '+num+'...">';
-      document.getElementById('featurelist').innerHTML += newInput;
-      var objDiv = document.getElementById("scroller");
-      objDiv.scrollTop = objDiv.scrollHeight;
-
-      num++;
-    }
-    if(num == 11){
-      document.getElementById('e').removeChild(document.getElementById('add'));
-    }
-  }
-</script> --}}
 </body>
 
 </html>
