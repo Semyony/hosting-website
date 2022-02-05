@@ -1,4 +1,4 @@
-# web hosting services
+# Web Hosting Services
 
 In order to run this website, follow this link:<br>
 https://semen203a6.herokuapp.com/<br>
